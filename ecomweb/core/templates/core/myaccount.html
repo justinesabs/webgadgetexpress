@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class="max-w-6xl mx-auto p-6">
+    <h1 class="mb-5 text-3xl"> My Account</h1>
+
+    <div class="mb-6">
+        <strong>Name: </strong><p class="font-sans font-light">{{ request.user.get_full_name }}</p>
+        <strong>Username: </strong><p class="font-sans font-light">{{ request.user.username }}</p>
+        <strong>Email: </strong><p class="font-sans font-light">{{ request.user.email }}</p>
+
+        <a href="{% url 'edit_myaccount' %}" class="inline-block mt-4 py-4 px-6 rounded-xl text-white bg-orange-200 hover:bg-orange-500 font-sans font-medium">Edit My Account</a>
+    </div>
+
+    <hr>
+
+    <h2 class="my-6 text-xl">My Orders</h2>
+
+    <div class="w-full mb-6 p-6 flex-wrap bg-gray-100 rounded-xl">
+        <div class="mb-6 flex justify-between">
+            <a href="#" class="font-sans font-medium">Order ID: 1</a>
+        </div>
+
+        <div class="mb-6 w-full">
+            <div class="product mb-6 flex pr-6">
+                <a href="#" class="w-1/4">
+                    <img class="hover:shadow-lg rounded-xl" src="" alt="">
+                </a>
+
+                <div class="w-3/4 pl-6">
+                    <div class="flex justify-between">
+                        <a href="#" class="text-lg font-sans font-medium">Product Name</a>
+
+                        <p class="mb-6 pt-1 text-gray-400 font-sans font-medium">P1000.00</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="mt-6 font-sans font-medium">
+                        Quantity : 1
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+
+        <div>
+            <p class="text-lg font-sans font-medium">Date: 04.04.2022</p>
+            <p class="text-lg font-sans font-medium">Total: 1000</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
